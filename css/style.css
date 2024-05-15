@@ -1,10 +1,10 @@
-/* Estilos para la barra de navegación */
+
 .navbar {
   background-color: #6c757d;
   padding: 10px 0;
 }
 
-.navbar .cont {
+.navbar .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,7 +15,7 @@
   width: 100px;
 }
 
-.menu {
+.navbar-menu {
   display: flex;
 }
 
@@ -34,29 +34,22 @@
   font-size: 18px;
 }
 
-/* Estilos para la sección de servicios */
-.serv {
+.servicios {
   margin-top: 50px;
 }
 
-.serv h2 {
+.servicios h2 {
   text-align: center;
 }
 
-.serv .rw {
-  display: flex;
-  justify-content: space-between;
-}
-
 .card {
-  width: 500px;
   height: 700px;
-  flex: 0 1 calc(30% - 20px); /* Ajustar el ancho de la tarjeta para que quepan tres en una fila */
+  width: 500px;
   margin-bottom: 30px;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
+}   
 
 .card-img {
   width: 100%;
@@ -76,8 +69,7 @@
   font-size: 16px;
 }
 
-/* Estilos para el pie de página */
-.footer {
+footer {
   background-color: #343a40;
   color: white;
   padding: 20px 0;
