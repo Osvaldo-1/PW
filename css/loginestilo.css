@@ -1,0 +1,129 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: arial;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-color: #566573;
+}
+
+.container{
+    position: relative;
+    width: 500px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #AEB6BF;
+    border-radius: 30px;
+}
+
+.form-container{
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-container h2{
+    font-size: 2rem;
+    color: #212F3D;
+}
+
+.input-container{
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.input-container input{
+    position: relative;
+    width: 100%;
+    padding: 12px 20px;
+    background: transparent;
+    border: 2px solid #17202A;
+    border-radius: 40px;
+    font-size: 1.2em;
+    color: #17202A;
+    box-shadow: none;
+    outline: none;
+}
+
+.input-container input[type="submit"]{
+    width: 100%;
+    background: #85929E; 
+    border: none;
+    cursor: pointer;
+}
+
+.input-container input::placeholder{
+    color: #17202A;
+    opacity: 0.5;
+}
+
+.input-container input[type="submit"]:hover{
+    background-color: #90A4AE;
+}
+
+.links-container{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.links-container a{
+    color: #5D6D7E;
+    text-decoration: none;
+}
+
+/* Funcion responsiva */
+
+/* Pantallas pequeñas */
+@media only screen and (max-width: 600px){
+    .container{
+        width: 350px;
+    }
+
+    .form-container{
+        display: flex;
+        position: absolute;
+        width: 230px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .links-container p{
+        font-size: 0.8rem;
+    }
+
+    .links-container a{
+        font-size: 0.8rem;
+        color: #5D6D7E;
+        text-decoration: none;
+    }
+}
+
+/* Pantallas medianas */
+@media only screen and (min-width: 601px) and (max-width: 992px){
+    .container{
+        width: 420px;
+    }
+}
