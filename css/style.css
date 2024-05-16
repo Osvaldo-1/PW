@@ -34,6 +34,7 @@
   font-size: 18px;
 }
 
+
 .servicios {
   margin-top: 50px;
 }
@@ -42,9 +43,16 @@
   text-align: center;
 }
 
+
+.servicios .row{
+  display: flex;
+  justify-content: space-between;
+}
+
 .card {
-  height: 700px;
   width: 500px;
+  height: 700px;
+  flex: 0 1 calc(30% - 20px); 
   margin-bottom: 30px;
   border-radius: 10px;
   overflow: hidden;
@@ -74,4 +82,10 @@ footer {
   color: white;
   padding: 20px 0;
   margin-top: 100px;
+}
+
+
+.servicios .row {
+  display: flex;
+  justify-content: space-between;
 }

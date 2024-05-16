@@ -19,8 +19,10 @@ if (isset($_POST['usuario']) && isset($_POST['pass'])) {
     $filas = mysqli_num_rows($resultado);
 
     if ($filas > 0) {
+        $row = mysqli_fetch_assoc($resultado);
         $_SESSION['usuario'] = $usuario;
-        header("Location:home.php");
+        $_SESSION['rol'] = $row['RolIdRol'];
+        header("Location: home.php");
         exit;
     } else {
         echo "Credenciales incorrectas. <br>";

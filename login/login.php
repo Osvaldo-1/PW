@@ -23,6 +23,12 @@
                 <div class="input-container">
                     <input type="submit" value="Iniciar Sesión">
                 </div>
+                <div class="input-container">
+                    <p>¿No tienes una cuenta? <a href="index.php">Regístrate aquí</a>.</p>
+                </div>
+                <div class="input-container">
+                    <p>Entrar sin registrarse <a href="home.php">Click aqui</a>.</p>
+                </div>
             </div>
         </div>
     </form>

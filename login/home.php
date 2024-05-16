@@ -1,9 +1,12 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barber shop</title>
+    <title>Barbería</title>
     <link rel="stylesheet" href="http://localhost/PW/css/style.css">
 </head>
 <body>
@@ -20,26 +23,35 @@
                     <li class="nav-item">
                         <a class="nav-link" href="Galeria.html">Galería</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Citas.html">Citas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="coments.html">Comentarios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="acercade.html">Acerca de Nosotros</a>
-                    </li>
+                    <?php if (!isset($_SESSION['usuario'])): ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.php">Iniciar Sesión</a>
+                        </li>
+                    <?php else: ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Citas.html">Agendar Cita</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="coments.html">Hacer Comentario</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cuenta.php">Cuenta</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="logout.php">Cerrar Sesión</a>
+                        </li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>
     </nav>
-    
+
     <section class="container">
         <section class="servicios">
             <div class="container">
                 <h2>Nuestros Servicios</h2>
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="card-container">
                         <div class="card">
                             <img src="http://localhost/PW/images/haircut1.jpg" class="card-img" alt="Foto1">
                             <div class="card-body">
@@ -47,8 +59,6 @@
                                 <p class="card-text">Este estilo implica una transición abrupta desde la parte superior del cabello hasta los lados, comenzando justo debajo de la línea del cabello natural. Los lados se cortan muy cortos o incluso se afeitan completamente, creando un contraste llamativo y moderno.</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
                         <div class="card">
                             <img src="http://localhost/PW/images/haircut2.jpg" class="card-img" alt="Foto2">
                             <div class="card-body">
@@ -56,8 +66,6 @@
                                 <p class="card-text">Este estilo de corte de cabello se caracteriza por una transición suave y equilibrada entre las longitudes de cabello corto en los lados y la parte superior de la cabeza. La transición comienza típicamente en la mitad de la cabeza, justo por encima de las orejas, creando un aspecto bien definido y limpio.</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
                         <div class="card">
                             <img src="http://localhost/PW/images/haircut3.jpg" class="card-img" alt="Foto3">
                             <div class="card-body">
@@ -70,10 +78,9 @@
             </div>
         </section>
     </section>
-
     <footer>
         <div class="container">
-            <p>&copy; 2024 Barber Shop. Todos los derechos reservados.</p>
+            <p>&copy; 2024 Barbería. Todos los derechos reservados.</p>
         </div>
     </footer>
 </body>
