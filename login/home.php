@@ -20,7 +20,7 @@ $usuario_registrado = isset($_SESSION['usuario']) && isset($_SESSION['rol']);
             </a>
             <div class="navbar-menu">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home.php">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="Galeria.html">Galería</a></li>
                     <li class="nav-item"><a class="nav-link" href="coments.php">Comentarios</a></li>
                     <?php if (!$usuario_registrado): ?>
