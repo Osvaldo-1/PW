@@ -42,13 +42,13 @@ $result = $stmt->get_result();
                     <li class="nav-item"><a class="nav-link" href="galeria.php">Galería</a></li>
                     <li class="nav-item"><a class="nav-link" href="coments.php">Comentarios</a></li>
                     <?php if (isset($_SESSION['usuario']) && isset($_SESSION['rol'])): ?>
-                        <li class="nav-item"><a class="nav-link" href="appointment_form.php">Citas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="crearcita.php">Citas</a></li>
                         <li class="nav-item"><a class="nav-link" href="citastatus2.php">Estado de cita</a></li>
                         <li class="nav-item"><a class="nav-link" href="logout.php">Cerrar Sesión</a></li>
                     <?php else: ?>
                         <li class="nav-item"><a class="nav-link" href="login.php">Iniciar Sesión</a></li>
                     <?php endif; ?>
-                    <li class="nav-item"><a class="nav-link" href="acercade.html">Acerca de Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="acercade.php">Acerca de Nosotros</a></li>
                 </ul>
             </div>
         </div>

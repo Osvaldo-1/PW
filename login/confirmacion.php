@@ -1,36 +1,18 @@
 <?php
 session_start();
 
-
+// Verificar si el usuario ha iniciado sesión
 if (!isset($_SESSION['usuario'])) {
     header("Location: login.php");
     exit;
 }
-
-$conexion = mysqli_connect("localhost", "root", "", "barber");
-if (!$conexion) {
-    die("Conexión fallida: " . mysqli_connect_error());
-}
-
-$date = $_POST['date'];
-$time = $_POST['time'];
-$service_id = $_POST['service'];
-
-$query = "SELECT * FROM servicio WHERE IdServicio = ?";
-$stmt = $conexion->prepare($query);
-$stmt->bind_param("i", $service_id);
-$stmt->execute();
-$result = $stmt->get_result();
-$service = $result->fetch_assoc();
-
-mysqli_close($conexion);
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confirmar Cita</title>
+    <title>Confirmación de Cita</title>
     <link rel="stylesheet" href="http://localhost/PW/css/style.css">
 </head>
 <body>
@@ -57,18 +39,9 @@ mysqli_close($conexion);
         </div>
     </nav>
     <section class="container">
-        <h2>Confirmar Cita</h2>
-        <form action="cita_agendada.php" method="POST">
-            <input type="hidden" name="date" value="<?php echo htmlspecialchars($date); ?>">
-            <input type="hidden" name="time" value="<?php echo htmlspecialchars($time); ?>">
-            <input type="hidden" name="service_id" value="<?php echo htmlspecialchars($service['IdServicio']); ?>">
-            <input type="hidden" name="user_id" value="<?php echo $_SESSION['usuario']; ?>">
-            <p><strong>Fecha:</strong> <?php echo htmlspecialchars(date('d-m-Y', strtotime($date))); ?></p>
-            <p><strong>Hora:</strong> <?php echo htmlspecialchars($time); ?></p>
-            <p><strong>Servicio:</strong> <?php echo htmlspecialchars($service['Descripcion']); ?></p>
-            <p><strong>Precio:</strong> $<?php echo htmlspecialchars($service['PrecioProducto']); ?></p>
-            <button type="submit">Confirmar Cita</button>
-        </form>
+        <h2>Confirmación de Cita</h2>
+        <p>Tu cita ha sido agendada con éxito.</p>
+        <a href="home.php">Volver al Inicio</a>
     </section>
     <footer>
         <div class="container">
