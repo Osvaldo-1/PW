@@ -1,56 +1,48 @@
 <?php
 session_start();
+$usuario_registrado = isset($_SESSION['usuario']) && isset($_SESSION['rol']);
 ?>
+
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barbería</title>
+    <title>Barber Shop</title>
     <link rel="stylesheet" href="http://localhost/PW/css/style.css">
 </head>
 <body>
+    <header>
     <nav class="navbar">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="http://localhost/PW/images/logo.png" height="100px" width="100px" alt="Logo">
+                <img src="http://localhost/PW/images/logo.jpg" height="150px" width="150px" alt="Logo">
             </a>
             <div class="navbar-menu">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Galeria.html">Galería</a>
-                    </li>
-                    <?php if (!isset($_SESSION['usuario'])): ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.php">Iniciar Sesión</a>
-                        </li>
-                    <?php else: ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Citas.html">Agendar Cita</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="coments.html">Hacer Comentario</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="cuenta.php">Cuenta</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="logout.php">Cerrar Sesión</a>
-                        </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Galeria.html">Galería</a></li>
+                    <li class="nav-item"><a class="nav-link" href="coments.php">Comentarios</a></li>
+                    <?php if (!$usuario_registrado): ?>
+                        <li class="nav-item"><a class="nav-link" href="login.php">Iniciar Sesión</a></li>
                     <?php endif; ?>
+                    <?php if ($usuario_registrado): ?>
+                        <li class="nav-item"><a class="nav-link" href="appointment_form.php">Citas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="cuenta.php">Cuenta</a></li>
+                        <li class="nav-item"><a class="nav-link" href="cita_status.php">Estado de cita</a></li>
+                        <li class="nav-item"><a class="nav-link" href="logout.php">Cerrar Sesión</a></li>
+                    <?php endif; ?>
+                    <li class="nav-item"><a class="nav-link" href="acercade.html">Acerca de Nosotros</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-
+    </header>
     <section class="container">
         <section class="servicios">
             <div class="container">
                 <h2>Nuestros Servicios</h2>
-                <div class="row">
+                <div class="">
                     <div class="card-container">
                         <div class="card">
                             <img src="http://localhost/PW/images/haircut1.jpg" class="card-img" alt="Foto1">
@@ -78,9 +70,10 @@ session_start();
             </div>
         </section>
     </section>
+    
     <footer>
         <div class="container">
-            <p>&copy; 2024 Barbería. Todos los derechos reservados.</p>
+            <p>&copy; 2024 Barber Shop. Todos los derechos reservados.</p>
         </div>
     </footer>
 </body>
