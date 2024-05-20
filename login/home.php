@@ -1,5 +1,6 @@
 <?php
 session_start();
+$usuario_registrado = isset($_SESSION['usuario']) && isset($_SESSION['rol']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,38 +11,25 @@ session_start();
     <link rel="stylesheet" href="http://localhost/PW/css/style.css">
 </head>
 <body>
-    <header>
     <nav class="navbar">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="http://localhost/PW/images/logo.jpg" height="150px" width="150px" alt="Logo">
+                <img src="http://localhost/PW/images/logo.jpg" height="100px" width="100px" alt="Logo">
             </a>
             <div class="navbar-menu">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Galeria.html">Galería</a>
-                    </li>
-                    <?php if (!isset($_SESSION['usuario'])): ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.php">Iniciar Sesión</a>
-                        </li>
-                    <?php else: ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Citas.html">Agendar Cita</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="coments.html">Hacer Comentario</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="cuenta.php">Cuenta</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="logout.php">Cerrar Sesión</a>
-                        </li>
+                    <li class="nav-item"><a class="nav-link" href="home.php">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="galeria.php">Galería</a></li>
+                    <li class="nav-item"><a class="nav-link" href="coments.php">Comentarios</a></li>
+                    <?php if (!$usuario_registrado): ?>
+                        <li class="nav-item"><a class="nav-link" href="login.php">Iniciar Sesión</a></li>
                     <?php endif; ?>
+                    <?php if ($usuario_registrado): ?>
+                        <li class="nav-item"><a class="nav-link" href="crearcita.php">Citas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="citastatus2.php">Estado de cita</a></li>
+                        <li class="nav-item"><a class="nav-link" href="logout.php">Cerrar Sesión</a></li>
+                    <?php endif; ?>
+                    <li class="nav-item"><a class="nav-link" href="acercade.php">Acerca de Nosotros</a></li>
                 </ul>
             </div>
         </div>
@@ -82,6 +70,33 @@ session_start();
                 </div>
             </div>
         </section>
+    </section>
+    <?php if ($usuario_registrado): ?>
+        <section class="comentarios">
+            <div class="container">
+                <h2>Publicar un Comentario</h2>
+                <form method="post" action="procesar_comentario.php">
+                    <div class="input-container">
+                        <label for="comentario">Comentario</label>
+                        <textarea name="comentario" id="comentario" required></textarea>
+                    </div>
+                    <div class="input-container">
+                        <label for="calificacion">Calificación</label>
+                        <select name="calificacion" id="calificacion" required>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="input-container">
+                        <input type="submit" value="Publicar Comentario">
+                    </div>
+                </form>
+            </div>
+        </section>
+        <?php endif; ?>
     </section>
     <footer>
         <div class="container">
