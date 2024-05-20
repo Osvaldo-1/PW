@@ -1,14 +1,12 @@
 <?php
 session_start();
-$usuario_registrado = isset($_SESSION['usuario']) && isset($_SESSION['rol']);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barber Shop</title>
+    <title>Barbería</title>
     <link rel="stylesheet" href="http://localhost/PW/css/style.css">
 </head>
 <body>
@@ -20,29 +18,40 @@ $usuario_registrado = isset($_SESSION['usuario']) && isset($_SESSION['rol']);
             </a>
             <div class="navbar-menu">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="home.php">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="Galeria.html">Galería</a></li>
-                    <li class="nav-item"><a class="nav-link" href="coments.php">Comentarios</a></li>
-                    <?php if (!$usuario_registrado): ?>
-                        <li class="nav-item"><a class="nav-link" href="login.php">Iniciar Sesión</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Galeria.html">Galería</a>
+                    </li>
+                    <?php if (!isset($_SESSION['usuario'])): ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.php">Iniciar Sesión</a>
+                        </li>
+                    <?php else: ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Citas.html">Agendar Cita</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="coments.html">Hacer Comentario</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cuenta.php">Cuenta</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="logout.php">Cerrar Sesión</a>
+                        </li>
                     <?php endif; ?>
-                    <?php if ($usuario_registrado): ?>
-                        <li class="nav-item"><a class="nav-link" href="appointment_form.php">Citas</a></li>
-                        <li class="nav-item"><a class="nav-link" href="cuenta.php">Cuenta</a></li>
-                        <li class="nav-item"><a class="nav-link" href="cita_status.php">Estado de cita</a></li>
-                        <li class="nav-item"><a class="nav-link" href="logout.php">Cerrar Sesión</a></li>
-                    <?php endif; ?>
-                    <li class="nav-item"><a class="nav-link" href="acercade.html">Acerca de Nosotros</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    </header>
+
     <section class="container">
         <section class="servicios">
             <div class="container">
                 <h2>Nuestros Servicios</h2>
-                <div class="">
+                <div class="row">
                     <div class="card-container">
                         <div class="card">
                             <img src="http://localhost/PW/images/haircut1.jpg" class="card-img" alt="Foto1">
@@ -51,6 +60,8 @@ $usuario_registrado = isset($_SESSION['usuario']) && isset($_SESSION['rol']);
                                 <p class="card-text">Este estilo implica una transición abrupta desde la parte superior del cabello hasta los lados, comenzando justo debajo de la línea del cabello natural. Los lados se cortan muy cortos o incluso se afeitan completamente, creando un contraste llamativo y moderno.</p>
                             </div>
                         </div>
+                    </div>
+                    <div class="col-md-4">
                         <div class="card">
                             <img src="http://localhost/PW/images/haircut2.jpg" class="card-img" alt="Foto2">
                             <div class="card-body">
@@ -58,6 +69,8 @@ $usuario_registrado = isset($_SESSION['usuario']) && isset($_SESSION['rol']);
                                 <p class="card-text">Este estilo de corte de cabello se caracteriza por una transición suave y equilibrada entre las longitudes de cabello corto en los lados y la parte superior de la cabeza. La transición comienza típicamente en la mitad de la cabeza, justo por encima de las orejas, creando un aspecto bien definido y limpio.</p>
                             </div>
                         </div>
+                    </div>
+                    <div class="col-md-4">
                         <div class="card">
                             <img src="http://localhost/PW/images/haircut3.jpg" class="card-img" alt="Foto3">
                             <div class="card-body">
@@ -70,7 +83,6 @@ $usuario_registrado = isset($_SESSION['usuario']) && isset($_SESSION['rol']);
             </div>
         </section>
     </section>
-    
     <footer>
         <div class="container">
             <p>&copy; 2024 Barber Shop. Todos los derechos reservados.</p>

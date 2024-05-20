@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 header {
   display: flex;
@@ -36,38 +37,44 @@ nav ul li a:hover {
 .navbar {
   background-color: none;
   padding: 10px 0;
+=======
+.navbar{
+background-color: #6c757d;
+padding: 10px 0;
+>>>>>>> 88344aa (modificacion en el home, login,validar)
 }
 
 .navbar .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+display: flex;
+justify-content: space-between;
+align-items: center;
 }
 
 .navbar-brand img {
-  height: 100px;
-  width: 100px;
+height: 100px;
+width: 100px;
 }
 
-.navbar-menu {
-  display: flex;
+.menu {
+display: flex;
 }
 
 .navbar-nav {
-  list-style: none;
-  display: flex;
+list-style: none;
+display: flex;
 }
 
 .nav-item {
-  margin-right: 20px;
+margin-right: 20px;
 }
 
 .nav-link {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
+color: white;
+text-decoration: none;
+font-size: 18px;
 }
 
+<<<<<<< HEAD
 
 .container {
   width: 100%;
@@ -76,11 +83,14 @@ nav ul li a:hover {
   padding: 20px;
 }
 
+=======
+>>>>>>> 88344aa (modificacion en el home, login,validar)
 .servicios {
-  margin-top: 50px;
+margin-top: 50px;
 }
 
 .servicios h2 {
+<<<<<<< HEAD
   text-align: center;
   margin-bottom: 30px;
   color: #333;
@@ -134,14 +144,59 @@ nav ul li a:hover {
 .card-text {
   font-size: 16px;
   color: #666;
+=======
+text-align: center;
 }
 
+
+.servicios .row{
+display: flex;
+justify-content: space-between;
+}
+
+.card {
+width: 500px;
+height: 700px;
+flex: 0 1 calc(30% - 20px); 
+margin-bottom: 30px;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}   
+
+.card-img {
+width: 100%;
+height: 70%;
+}
+
+.card-body {
+padding: 20px;
+}
+
+.card-title {
+font-size: 20px;
+margin-bottom: 10px;
+}
+
+.card-text {
+font-size: 16px;
+>>>>>>> 88344aa (modificacion en el home, login,validar)
+}
+
+
 footer {
+<<<<<<< HEAD
   background-color: #343a40;
   color: white;
   padding: 20px 0;
   text-align: center;
   margin-top: 100px;
+=======
+background-color: #343a40;
+color: white;
+padding: 20px 0;
+margin-top: 100px;
+>>>>>>> 88344aa (modificacion en el home, login,validar)
 }
 
 .input-container {
@@ -229,3 +284,11 @@ h2 {
 }
 
 
+<<<<<<< HEAD
+=======
+.servicios .row {
+display: flex;
+justify-content: space-between;
+}
+
+>>>>>>> 88344aa (modificacion en el home, login,validar)
