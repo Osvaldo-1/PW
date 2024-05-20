@@ -21,7 +21,6 @@ while ($row = mysqli_fetch_assoc($result)) {
 }
 
 mysqli_close($conexion);
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +30,6 @@ mysqli_close($conexion);
     <title>Agendar Cita</title>
     <link rel="stylesheet" href="http://localhost/PW/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css">
-    
 </head>
 <body>
 <header>
@@ -46,7 +44,6 @@ mysqli_close($conexion);
                     <li class="nav-item"><a class="nav-link" href="Galeria.html">Galería</a></li>
                     <li class="nav-item"><a class="nav-link" href="coments.php">Comentarios</a></li>
                     <?php
-                    session_start();
                     $usuario_registrado = isset($_SESSION['usuario']) && isset($_SESSION['rol']);
                     if (!$usuario_registrado): ?>
                         <li class="nav-item"><a class="nav-link" href="login.php">Iniciar Sesión</a></li>
@@ -61,43 +58,43 @@ mysqli_close($conexion);
             </div>
         </div>
     </nav>
-    </header>
-    <section class="container">
-        <h2>Agendar Cita</h2>
-        <input type="text" id="datetimepicker" name="appointmentDate" placeholder="Seleccione fecha y hora" />
-        <button id="submitAppointment">Agendar</button>
-        <form id="appointmentForm" action="select_service.php" method="POST" style="display: none;">
-            <input type="hidden" id="date" name="date">
-            <input type="hidden" id="time" name="time">
-        </form>
-    </section>
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Barber Shop. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+</header>
+<section class="container">
+    <h2>Agendar Cita</h2>
+    <input type="text" id="datetimepicker" name="appointmentDate" placeholder="Seleccione fecha y hora" />
+    <button id="submitAppointment">Agendar</button>
+    <form id="appointmentForm" action="select_service.php" method="POST" style="display: none;">
+        <input type="hidden" id="date" name="date">
+        <input type="hidden" id="time" name="time">
+    </form>
+</section>
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Barber Shop. Todos los derechos reservados.</p>
+    </div>
+</footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('#datetimepicker').datetimepicker({
-                format:'Y-m-d H:i', // Formato de fecha y hora
-                step: 30, // Intervalo de minutos
-                minDate: 0, // Fecha mínima (hoy)
-                allowTimes: ['09:00', '09:30', '10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00', '17:30', '18:00', '18:30', '19:00', '19:30', '20:00', '20:30'] // Horarios permitidos
-            });
-
-            $('#submitAppointment').click(function(){
-                var selectedDateTime = $('#datetimepicker').val();
-                $('#date').val(selectedDateTime.split(' ')[0]); // Separar la fecha y guardarla en el campo oculto
-                $('#time').val(selectedDateTime.split(' ')[1]); // Separar la hora y guardarla en el campo oculto
-                // Validación adicional si es necesaria
-                
-                // Envío del formulario
-                $('#appointmentForm').submit();
-            });
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#datetimepicker').datetimepicker({
+            format:'Y-m-d H:i', // Formato de fecha y hora
+            step: 30, // Intervalo de minutos
+            minDate: 0, // Fecha mínima (hoy)
+            allowTimes: ['09:00', '09:30', '10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00', '17:30', '18:00', '18:30', '19:00', '19:30', '20:00', '20:30'] // Horarios permitidos
         });
-    </script>
+
+        $('#submitAppointment').click(function(){
+            var selectedDateTime = $('#datetimepicker').val();
+            $('#date').val(selectedDateTime.split(' ')[0]); // Separar la fecha y guardarla en el campo oculto
+            $('#time').val(selectedDateTime.split(' ')[1]); // Separar la hora y guardarla en el campo oculto
+            // Validación adicional si es necesaria
+            
+            // Envío del formulario
+            $('#appointmentForm').submit();
+        });
+    });
+</script>
 </body>
 </html>
