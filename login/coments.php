@@ -1,5 +1,4 @@
 <?php
-
 if (!isset($_SESSION)) {
     session_start();
 }
@@ -9,14 +8,18 @@ if (!$conexion) {
     die("Conexión fallida: " . mysqli_connect_error());
 }
 
+if (isset($_SESSION['usuario'])) {
+    $usuario_id = $_SESSION['usuario'];
+    $consulta = "SELECT c.UsuarioIdUsuario, c.DescripcionComentario as comentario, c.Calificacion, u.NombreUsuario
+                 FROM comentario c 
+                 JOIN usuario u ON c.UsuarioIdUsuario = u.IdUsuario
+                 WHERE c.UsuarioIdUsuario = '$usuario_id'";
+    $resultado = mysqli_query($conexion, $consulta);
+} else {
 
-$usuario_id = $_SESSION['usuario']; 
-$consulta = "SELECT c.UsuarioIdUsuario, c.DescripcionComentario as comentario, c.Calificacion, u.NombreUsuario
-             FROM comentario c 
-             JOIN usuario u ON c.UsuarioIdUsuario = u.IdUsuario
-             WHERE c.UsuarioIdUsuario = '$usuario_id'";
-$resultado = mysqli_query($conexion, $consulta);
-
+    header("Location: login.php");
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

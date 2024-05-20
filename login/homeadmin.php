@@ -27,7 +27,6 @@ if (!isset($_SESSION['usuario']) || $_SESSION['rol'] != 1) {
                     <li class="nav-item"><a class="nav-link" href="admusuarios.php">Administrar Usuarios</a></li>
                     <li class="nav-item"><a class="nav-link" href="admcita.php">Administrar Citas</a></li>
                     <li class="nav-item"><a class="nav-link" href="admcomentario.php">Administrar Comentarios</a></li>
-                    <li class="nav-item"><a class="nav-link" href="cuenta.php">Cuenta</a></li>
                     <li class="nav-item"><a class="nav-link" href="logout.php">Cerrar Sesión</a></li>
                 </ul>
             </div>
