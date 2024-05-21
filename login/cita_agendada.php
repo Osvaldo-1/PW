@@ -10,7 +10,7 @@
     <nav class="navbar">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="http://localhost/PW/images/logo.png" height="100px" width="100px" alt="Logo">
+                <img src="http://localhost/PW/images/logo.jpg" height="100px" width="100px" alt="Logo">
             </a>
 
         </div>
