@@ -12,13 +12,12 @@
             <a class="navbar-brand" href="#">
                 <img src="http://localhost/PW/images/logo.png" height="100px" width="100px" alt="Logo">
             </a>
-            <!-- Menú de navegación aquí -->
         </div>
     </nav>
     <section class="container">
         <h2>Cita Agendada Exitosamente</h2>
         <p>Tu cita ha sido agendada exitosamente. ¡Esperamos verte pronto!</p>
-        <a href="home.php">Volver al inicio</a> <!-- Puedes cambiar esto según tu estructura de navegación -->
+        <a href="home.php">Volver al inicio</a> 
     </section>
     <footer>
         <div class="container">
