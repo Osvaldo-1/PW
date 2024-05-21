@@ -24,7 +24,7 @@ $usuario_registrado = isset($_SESSION['usuario']) && isset($_SESSION['rol']);
                         <li class="nav-item"><a class="nav-link" href="login.php">Iniciar Sesión</a></li>
                     <?php endif; ?>
                     <?php if ($usuario_registrado): ?>
-                        <li class="nav-item"><a class="nav-link" href="coments.php">Comentarios</a></li>ñ
+                        <li class="nav-item"><a class="nav-link" href="coments.php">Comentarios</a></li>
                         <li class="nav-item"><a class="nav-link" href="crearcita.php">Citas</a></li>
                         <li class="nav-item"><a class="nav-link" href="citastatus2.php">Estado de cita</a></li>
                         <li class="nav-item"><a class="nav-link" href="logout.php">Cerrar Sesión</a></li>
