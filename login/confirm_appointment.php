@@ -58,7 +58,7 @@ mysqli_close($conexion);
     </nav>
     <section class="container">
         <h2>Confirmar Cita</h2>
-        <form action="cita_agendada.php" method="POST">
+        <form action="save_appointment.php" method="POST">
             <input type="hidden" name="date" value="<?php echo htmlspecialchars($date); ?>">
             <input type="hidden" name="time" value="<?php echo htmlspecialchars($time); ?>">
             <input type="hidden" name="service_id" value="<?php echo htmlspecialchars($service['IdServicio']); ?>">

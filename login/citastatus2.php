@@ -22,6 +22,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,7 +49,7 @@ $result = $stmt->get_result();
                     <?php else: ?>
                         <li class="nav-item"><a class="nav-link" href="login.php">Iniciar Sesión</a></li>
                     <?php endif; ?>
-                    <li class="nav-item"><a class="nav-link" href="acercade.php">Acerca de Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="acercade.html">Acerca de Nosotros</a></li>
                 </ul>
             </div>
         </div>

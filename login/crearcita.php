@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 if (!isset($_SESSION['usuario'])) {
     header("Location: login.php");
     exit;
@@ -10,6 +11,7 @@ $conexion = mysqli_connect("localhost", "root", "", "barber");
 if (!$conexion) {
     die("Conexión fallida: " . mysqli_connect_error());
 }
+
 
 $query = "SELECT FechaCita, HoraCita FROM cita";
 $result = mysqli_query($conexion, $query);
@@ -53,7 +55,7 @@ mysqli_close($conexion);
     </script>
 </head>
 <body>
-<nav class="navbar">
+    <nav class="navbar">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="http://localhost/PW/images/logo.png" height="100px" width="100px" alt="Logo">

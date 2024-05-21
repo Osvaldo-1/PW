@@ -7,6 +7,7 @@ if (!isset($_SESSION['usuario'])) {
     exit;
 }
 
+
 $date = $_POST['date'] ?? ''; 
 $time = $_POST['time'] ?? '';
 
