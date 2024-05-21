@@ -11,20 +11,20 @@ $usuario_registrado = isset($_SESSION['usuario']) && isset($_SESSION['rol']);
     <link rel="stylesheet" href="http://localhost/PW/css/style.css">
 </head>
 <body>
-    <nav class="navbar">
+<nav class="navbar">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="http://localhost/PW/images/logo.jpg" height="100px" width="100px" alt="Logo">
+                <img src="http://localhost/PW/images/logo.png" height="100px" width="100px" alt="Logo">
             </a>
             <div class="navbar-menu">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="home.php">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="galeria.php">Galería</a></li>
-                    <li class="nav-item"><a class="nav-link" href="coments.php">Comentarios</a></li>
                     <?php if (!$usuario_registrado): ?>
                         <li class="nav-item"><a class="nav-link" href="login.php">Iniciar Sesión</a></li>
                     <?php endif; ?>
                     <?php if ($usuario_registrado): ?>
+                        <li class="nav-item"><a class="nav-link" href="coments.php">Comentarios</a></li>
                         <li class="nav-item"><a class="nav-link" href="crearcita.php">Citas</a></li>
                         <li class="nav-item"><a class="nav-link" href="citastatus2.php">Estado de cita</a></li>
                         <li class="nav-item"><a class="nav-link" href="logout.php">Cerrar Sesión</a></li>
