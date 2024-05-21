@@ -1,294 +1,91 @@
-<<<<<<< HEAD
-
-header {
-  display: flex;
-  background-image: url(/PW/Images/Fondo.jpg);
-  align-items: center;
-  padding: 10px;
-  background-color: none; /* Color de fondo del encabezado */
-  color: white; /* Color del texto */
-}
-
-header .navbar-nav .nav-link {
-  color: red !important; /* Cambia el color de los enlaces a rojo */
-}
-
-header .navbar-brand {
-  color: red !important; /* Cambia el color del texto de la marca a rojo */
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li {
-  margin-left: 20px;
-}
-
-
-nav ul li a:hover {
-  background-color: white; /* Color de fondo al pasar el ratón */
-}
-
 
 .navbar {
-  background-color: none;
+  background-color: #6c757d;
   padding: 10px 0;
-=======
-.navbar{
-background-color: #6c757d;
-padding: 10px 0;
->>>>>>> 88344aa (modificacion en el home, login,validar)
 }
 
 .navbar .container {
-display: flex;
-justify-content: space-between;
-align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navbar-brand img {
-height: 100px;
-width: 100px;
+  height: 100px;
+  width: 100px;
 }
 
-.menu {
-display: flex;
+.navbar-menu {
+  display: flex;
 }
 
 .navbar-nav {
-list-style: none;
-display: flex;
+  list-style: none;
+  display: flex;
 }
 
 .nav-item {
-margin-right: 20px;
+  margin-right: 20px;
 }
 
 .nav-link {
-color: white;
-text-decoration: none;
-font-size: 18px;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
 }
 
-<<<<<<< HEAD
 
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-=======
->>>>>>> 88344aa (modificacion en el home, login,validar)
 .servicios {
-margin-top: 50px;
+  margin-top: 50px;
 }
 
 .servicios h2 {
-<<<<<<< HEAD
   text-align: center;
-  margin-bottom: 30px;
-  color: #333;
 }
 
-.row {
-  display: flex;
-  justify-content: center; /* Centramos las tarjetas horizontalmente */
-  flex-wrap: wrap;
-}
 
-.card-container {
+.servicios .row{
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
+  justify-content: space-between;
 }
 
 .card {
-  background-color: white;
+  width: 500px;
+  height: 700px;
+  flex: 0 1 calc(30% - 20px); 
+  margin-bottom: 30px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  transition: transform 0.3s;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 300px;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-}
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}   
 
 .card-img {
   width: 100%;
-  height: auto;
+  height: 70%;
 }
 
 .card-body {
   padding: 20px;
-  text-align: center; /* Centramos el texto */
 }
 
 .card-title {
   font-size: 20px;
   margin-bottom: 10px;
-  color: #333;
 }
 
 .card-text {
   font-size: 16px;
-  color: #666;
-=======
-text-align: center;
 }
-
-
-.servicios .row{
-display: flex;
-justify-content: space-between;
-}
-
-.card {
-width: 500px;
-height: 700px;
-flex: 0 1 calc(30% - 20px); 
-margin-bottom: 30px;
-border-radius: 10px;
-overflow: hidden;
-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}   
-
-.card-img {
-width: 100%;
-height: 70%;
-}
-
-.card-body {
-padding: 20px;
-}
-
-.card-title {
-font-size: 20px;
-margin-bottom: 10px;
-}
-
-.card-text {
-font-size: 16px;
->>>>>>> 88344aa (modificacion en el home, login,validar)
-}
-
 
 footer {
-<<<<<<< HEAD
   background-color: #343a40;
   color: white;
   padding: 20px 0;
-  text-align: center;
   margin-top: 100px;
-=======
-background-color: #343a40;
-color: white;
-padding: 20px 0;
-margin-top: 100px;
->>>>>>> 88344aa (modificacion en el home, login,validar)
-}
-
-.input-container {
-  margin-bottom: 20px;
-}
-
-textarea, select, input[type="submit"] {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  font-size: 16px;
 }
 
 
-.input-container {
-  margin-bottom: 20px;
-}
-
-textarea, select, input[type="submit"] {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  font-size: 16px;
-}
-
-#comentarios {
-  display: none;
-  margin-top: 20px;
-}
-
-button#toggle-comments {
-  display: block;
-  margin: 20px auto;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button#toggle-comments:hover {
-  background-color: rgb(20, 197, 20);
-}
-
-
-
-
-
-
-h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.appointment-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-.appointment-table th, .appointment-table td {
-  border: 1px solid #ddd;
-  padding: 12px;
-  text-align: left;
-}
-
-.appointment-table th {
-  background-color: #f2f2f2;
-  color: #333;
-  font-weight: bold;
-}
-
-.appointment-table tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-.appointment-table tr:hover {
-  background-color: #f1f1f1;
-}
-
-.appointment-table td {
-  color: #666;
-}
-
-
-<<<<<<< HEAD
-=======
 .servicios .row {
-display: flex;
-justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
-
->>>>>>> 88344aa (modificacion en el home, login,validar)
